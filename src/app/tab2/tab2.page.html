@@ -6,6 +6,40 @@
   </ion-toolbar>
 </ion-header>
 
+<form (ngSubmit)="logForm()">
+  <ion-item>
+    <ion-label>Primeiro Nome</ion-label>
+    <ion-input type="text" [(ngModel)]="pessoaForm.first_name" name="Nome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Sobrenome</ion-label>
+    <ion-input [(ngModel)]="pessoaForm.first_name" name="sobrenome"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Email</ion-label>
+    <ion-input [(ngModel)]="pessoaForm.email" name="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Sexo</ion-label>
+    <ion-select type="text" name="status" [(ngModel)]="pessoaForm.gender" class="form-control">
+      <ion-select-option class="status" value=""></ion-select-option>
+      <ion-select-option class="status" value="DISPONIVEL">Male</ion-select-option>
+      <ion-select-option class="status" value="OCUPADA">Female</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Latitude</ion-label>
+    <ion-input [(ngModel)]="pessoaForm.latitude" name="latitude"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Longitude</ion-label>
+    <ion-input [(ngModel)]="pessoaForm.longitude" name="longitude"></ion-input>
+  </ion-item>
+
+  <button ion-button type="submit" block>Add Todo</button>
+</form>
+
+
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -13,5 +47,5 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
 </ion-content>
