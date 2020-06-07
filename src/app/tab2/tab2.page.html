@@ -6,14 +6,14 @@
   </ion-toolbar>
 </ion-header>
 
-<form (ngSubmit)="logForm()">
+<form #formpost="ngForm" (ngSubmit)="logForm(formpost)">
   <ion-item>
     <ion-label>Primeiro Nome</ion-label>
-    <ion-input type="text" [(ngModel)]="pessoaForm.first_name" name="Nome"></ion-input>
+    <ion-input type="text" [(ngModel)]="pessoaForm.first_name" name="first_name"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>Sobrenome</ion-label>
-    <ion-input [(ngModel)]="pessoaForm.first_name" name="sobrenome"></ion-input>
+    <ion-input [(ngModel)]="pessoaForm.last_name" name="last_name"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>Email</ion-label>
@@ -21,10 +21,10 @@
   </ion-item>
   <ion-item>
     <ion-label>Sexo</ion-label>
-    <ion-select type="text" name="status" [(ngModel)]="pessoaForm.gender" class="form-control">
+    <ion-select type="text" name="gender" [(ngModel)]="pessoaForm.gender" class="form-control">
       <ion-select-option class="status" value=""></ion-select-option>
-      <ion-select-option class="status" value="DISPONIVEL">Male</ion-select-option>
-      <ion-select-option class="status" value="OCUPADA">Female</ion-select-option>
+      <ion-select-option class="status" value="Male">Male</ion-select-option>
+      <ion-select-option class="status" value="Female">Female</ion-select-option>
     </ion-select>
   </ion-item>
   <ion-item>
@@ -35,8 +35,9 @@
     <ion-label>Longitude</ion-label>
     <ion-input [(ngModel)]="pessoaForm.longitude" name="longitude"></ion-input>
   </ion-item>
-
-  <button ion-button type="submit" block>Add Todo</button>
+  <ion-item>
+    <ion-button ion-button type="submit">Cadastrar</ion-button>
+  </ion-item>
 </form>
 
 
